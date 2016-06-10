@@ -1,4 +1,5 @@
 <?php
+ date_default_timezone_set('America/Tijuana');
     class preguntas{
         var $id_migrante;
         var $id_encuesta;
@@ -115,28 +116,28 @@
 						'".$horaSistema."',  
 						'Sistema',
 						'',
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL,
-                        NULL)";
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '',
+                        '')";
 			
 			$resultado=$mysqli->query($query);
 			if (!$resultado) {
