@@ -12,5 +12,5 @@
 		$datosConexionBD[0] = 'localhost'; // Colocamos el servidor donde está MySql
 		$datosConexionBD[1] = 'eduardo.abad'; // Colocamos el usuario de Mysql
 		$datosConexionBD[2] = 'Chocheman3'; // Colocamos la contraseña del usuario de Mysql
-		$datosConexionBD[3] = 'gmigrantes'; // Colocamos el nombre de la BD
+		$datosConexionBD[3] = 'gmigrante'; // Colocamos el nombre de la BD
 ?>
