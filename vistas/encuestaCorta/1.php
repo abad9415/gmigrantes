@@ -10,14 +10,54 @@
 	include '../../vistas/header.php';
 	include '../actions/actionRequerido.php';
 ?>
+<script type="text/javascript">
+
+$(document).ready(function(){
+	$("#eCorta1").submit(function(e){
+		$.ajax({
+			 type: "POST", 	
+			  url: "../actions/actualizarDatos.php",
+			  data:"ape_paternoForm="+$("#ape_paternoForm").val()+ 
+			  "&ape_maternoForm="+$("#ape_maternoForm").val()+
+			  '&nombreForm='+$("#nombreForm").val() + 
+			  '&edadForm='+$("#edadForm").val() +
+			  '&originarioForm='+$("#originarioForm").val() +
+			  '&estado_civilForm='+$("#estado_civilForm").val() +
+			  '&hijosForm='+$("#hijosForm").val() +
+              '&estudiosForm='+$("#estudiosForm").val() +
+              '&cruzandoForm='+$("#cruzandoForm").val() +
+              '&c_fecha_salio_casaForm='+$("#c_fecha_salio_casaForm").val() +
+              '&c_por_donde_cruzoForm='+$("#c_por_donde_cruzoForm").val() +
+              '&c_cuanto_cobranForm='+$("#c_cuanto_cobranForm").val() +
+              '&c_intentosForm='+$("#c_intentosForm").val() +
+              '&vivia_euaForm='+$("#vivia_euaForm").val() +
+              '&v_anos_viviendoForm='+$("#v_anos_viviendoForm").val() +
+              '&v_donde_viviaForm='+$("#v_donde_viviaForm").val() +
+              '&v_donde_lo_detuvieronForm='+$("#v_donde_lo_detuvieronForm").val() +
+              '&tiempo_detenidoForm='+$("#tiempo_detenidoForm").val() +
+              '&porque_mas_3_diasForm='+$("#porque_mas_3_diasForm").val() +
+              '&victima_abusoForm='+$("#victima_abusoForm").val() +
+              '&conoce_derechosForm='+$("#conoce_derechosForm").val() +
+              '&derechos_violados_porqueForm='+$("#derechos_violados_porqueForm").val() +
+              '&servicio_moduloForm='+$("#servicio_moduloForm").val()
+			}).done(function(result) {
+				alert (result);
+				//window.location.href = "http://www.bufa.es";		
+		});
+	    return false;
+	});
+});
+</script>
+
+
 <body onload = "document.eCorta1.aPaterno.focus() ">
-<form name="eCorta1" action="" id="eCorta1">
+<form id="eCorta1" method="post">
    <div class="divPreguntas">
       <div class="divInputs">
           <label for="aPaterno"><strong>Apellido Paterno</strong></label>
-          <input type="text" id="aPaterno" class="txt-center" name="aPaterno" required value="<?=$ape_paterno?>">
+          <input type="text" id="ape_paternoForm" class="txt-center" name="ape_paternoForm" required value="<?=$ape_paterno?>">
           <label for="aPaterno"><strong>Apellido Materno</strong></label>
-          <input type="text" id="aMaterno" class="txt-center" name="aMaterno" required value="<?=$ape_materno?>">
+          <input type="text" id="ape_maternoForm" class="txt-center" name="ape_maternoForm" required value="<?=$ape_materno?>">
       </div>
         <div>
             <input type="hidden" name="nombreForm" id="nombreForm" value="<?=$nombre?>">
@@ -41,9 +81,12 @@
             <input type="hidden" name="conoce_derechosForm" id="conoce_derechosForm" value="<?=$conoce_derechos?>">
             <input type="hidden" name="derechos_violados_porqueForm" id="derechos_violados_porqueForm" value="<?=$derechos_violados_porque?>">
             <input type="hidden" name="servicio_moduloForm" id="servicio_moduloForm" value="<?=$servicio_modulo?>">
+            <input type="hidden" name="id_migranteForm" id="id_migranteForm" value="<?=$servicio_modulo?>">
         </div>
     </div>
-    <a href="2.php" class="txt-right"><span class="icon-arrow-right2"></span></a>
+    <button name="nextForm" id="nextForm" type="submit" class="botonNext">
+    <span class="icon-arrow-right2"></span>
+    </button>
 </form>
 <?php
 include '../../vistas/footer.php';
