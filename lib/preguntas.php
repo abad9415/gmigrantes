@@ -150,5 +150,49 @@
 			}	
         }
         
-    }
+        public function actualizarRespuestas(){
+            $mysqli = new mysqli($this->datosConexionBD[0], $this->datosConexionBD[1], $this->datosConexionBD[2], $this->datosConexionBD[3]);
+			/* check connection */
+			if (mysqli_connect_errno()) {
+				printf("Error de conexión: %s\n", mysqli_connect_error());
+				exit();
+			}
+            
+            $query ="
+					UPDATE  encuestacorta 
+						SET 
+				        ape_paterno = '".$this->ape_paterno."',
+						ape_materno = '".$this->ape_materno."',
+                        nombre = '".$this->nombre."',
+                        edad = '".$this->edad."',
+                        originario = '".$this->originario."',
+                        estado_civil = '".$this->estado_civil."',
+                        hijos = '".$this->hijos."',
+                        estudios = '".$this->estudios."',
+                        cruzando = '".$this->cruzando."',
+                        c_fecha_salio_casa = '".$this->c_fecha_salio_casa."',
+                        c_por_donde_cruzo = '".$this->c_por_donde_cruzo."',
+                        c_cuanto_cobran = '".$this->c_cuanto_cobran."',
+                        c_intentos = '".$this->c_intentos."',
+                        vivia_eua = '".$this->vivia_eua."',
+                        v_anos_viviendo = '".$this->v_anos_viviendo."',
+                        v_donde_vivia = '".$this->v_donde_vivia."',
+                        v_donde_lo_detuvieron = '".$this->v_donde_lo_detuvieron."',
+                        tiempo_detenido = '".$this->tiempo_detenido."',
+                        porque_mas_3_dias = '".$this->porque_mas_3_dias."',
+                        victima_abuso = '".$this->victima_abuso."',
+                        conoce_derechos = '".$this->conoce_derechos."',
+                        derechos_violados_porque = '".$this->derechos_violados_porque."',
+                        servicio_modulo = '".$this->servicio_modulo."'
+						WHERE id_migrante = ".$this->id_migrante;
+            $resultado = $mysqli->query($query);
+            if (!$resultado) {
+                     return (printf ("Errormessage: %s\n", $mysqli->error));
+                }else{
+                    /* close connection */
+                    $mysqli->close();
+                    return 'Cambio exitoso';
+                }
+        }
+     }
 ?>

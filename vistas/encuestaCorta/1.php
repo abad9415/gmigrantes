@@ -39,7 +39,8 @@ $(document).ready(function(){
               '&victima_abusoForm='+$("#victima_abusoForm").val() +
               '&conoce_derechosForm='+$("#conoce_derechosForm").val() +
               '&derechos_violados_porqueForm='+$("#derechos_violados_porqueForm").val() +
-              '&servicio_moduloForm='+$("#servicio_moduloForm").val()
+              '&servicio_moduloForm='+$("#servicio_moduloForm").val()+
+              '&id_migranteForm='+$("#id_migranteForm").val()
 			}).done(function(result) {
 				alert (result);
 				//window.location.href = "http://www.bufa.es";		
@@ -81,7 +82,7 @@ $(document).ready(function(){
             <input type="hidden" name="conoce_derechosForm" id="conoce_derechosForm" value="<?=$conoce_derechos?>">
             <input type="hidden" name="derechos_violados_porqueForm" id="derechos_violados_porqueForm" value="<?=$derechos_violados_porque?>">
             <input type="hidden" name="servicio_moduloForm" id="servicio_moduloForm" value="<?=$servicio_modulo?>">
-            <input type="hidden" name="id_migranteForm" id="id_migranteForm" value="<?=$servicio_modulo?>">
+            <input type="hidden" name="id_migranteForm" id="id_migranteForm" value="<?=$idForm?>">
         </div>
     </div>
     <button name="nextForm" id="nextForm" type="submit" class="botonNext">

@@ -75,6 +75,7 @@
 
 /*Nueva consulta de id incrmeentado*/
  $preguntas->id_migrante = $id[$i];
+$idForm = $id[$i];
 		$preguntasR = $preguntas->consultarPreguntasxId();
 		//print_r($result);
 		while($row = $preguntasR->fetch_assoc()) {
