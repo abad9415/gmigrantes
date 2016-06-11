@@ -42,8 +42,8 @@ $(document).ready(function(){
               '&servicio_moduloForm='+$("#servicio_moduloForm").val()+
               '&id_migranteForm='+$("#id_migranteForm").val()
 			}).done(function(result) {
-				alert (result);
-				//window.location.href = "http://www.bufa.es";		
+				//alert (result);
+				window.location.href = "2.php";		
 		});
 	    return false;
 	});
@@ -85,7 +85,7 @@ $(document).ready(function(){
             <input type="hidden" name="id_migranteForm" id="id_migranteForm" value="<?=$idForm?>">
         </div>
     </div>
-    <button name="nextForm" id="nextForm" type="submit" class="botonNext">
+    <button name="nextForm" id="nextForm" type="submit" class="botonNext flechasEAT txt-right">
     <span class="icon-arrow-right2"></span>
     </button>
 </form>

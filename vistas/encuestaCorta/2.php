@@ -10,7 +10,7 @@ include '../../vistas/header.php';
           <label for="aPaterno"><strong>Edad</strong></label>
           <input type="text" id="aMaterno" class="txt-center" name="aMaterno" required>
       </div>
-            <a href="1.php" class="txt-left"><span class="icon-arrow-left2"></span></a>
+            <a href="1.php" class="txt-left flechasEAT"><span class="icon-arrow-left2"></span></a>
             <a href="2.php" class="txt-right"><span class="icon-arrow-right2"></span></a>
     </div>
 </form>
