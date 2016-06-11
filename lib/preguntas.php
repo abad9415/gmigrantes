@@ -67,7 +67,7 @@
             $resultado = $mysqli->query($query);
             if(!$resultado){//If es una condicional
                 printf("Error Message: %s\n", $mysqli->error);//Imprime un string con el problema generado a partir de $query
-            }	
+            }
 			$mysqli->close();//cierra la conexion con la BD
             return $resultado;
         }

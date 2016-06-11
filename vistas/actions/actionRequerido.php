@@ -52,8 +52,6 @@
 		//print_r($result);
 		while($row = $preguntasR->fetch_assoc()) {
 			//Declaramos las variables de los atributos de mi clase usuario
-			$c_ape_paterno = $row['ape_paterno'];
-			$c_ape_materno = $row['ape_materno'];
             $c_servicio_modulo = $row['servicio_modulo'];
 		}
         if($c_servicio_modulo==""){
@@ -82,7 +80,28 @@ $idForm = $id[$i];
 			//Declaramos las variables de los atributos de mi clase usuario
 			$ape_paterno = $row['ape_paterno'];
 			$ape_materno = $row['ape_materno'];
+            $nombre = $row['nombre'];
+            $edad = $row['edad'];
+            $originario = $row['originario'];
+            $estado_civil = $row['estado_civil'];
+            $hijos = $row['hijos'];
+            $estudios = $row['estudios'];
+            $cruzando = $row['cruzando'];
+            $c_fecha_salio_casa = $row['c_fecha_salio_casa'];
+            $c_por_donde_cruzo = $row['c_por_donde_cruzo'];
+            $c_cuanto_cobran = $row['c_cuanto_cobran'];
+            $c_intentos = $row['c_intentos'];
+            $vivia_eua = $row['vivia_eua'];
+            $v_anos_viviendo = $row['v_anos_viviendo'];
+            $v_donde_vivia = $row['v_donde_vivia'];
+            $v_donde_lo_detuvieron = $row['v_donde_lo_detuvieron'];
+            $tiempo_detenido = $row['tiempo_detenido'];
+            $porque_mas_3_dias = $row['porque_mas_3_dias'];
+            $victima_abuso = $row['victima_abuso'];
+            $conoce_derechos = $row['conoce_derechos'];
+            $derechos_violados_porque = $row['derechos_violados_porque'];
             $servicio_modulo = $row['servicio_modulo'];
 		}
 /*Fin de Nueva consulta de id incrmeentado*/
+echo "Ultimo id: " . $nombre    ;
 ?>
