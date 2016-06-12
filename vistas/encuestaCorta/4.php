@@ -6,7 +6,7 @@
 <form id="eCorta1" method="post">
    <div class="divPreguntas">
       <div class="divInputs">
-           <label for="aPaterno"><strong>¿Cuantos Hijos tiene?</strong></label>
+           <label for="hijosForm"><strong>¿Cuantos Hijos tiene?</strong></label>
           <select name="hijosForm" id="hijosForm" class="inputEAT txt-center selectEAT" required>
                <?php
               if($hijos=="")
@@ -29,7 +29,7 @@
               <option value="9">9</option>
               <option value="10">10</option>
           </select>
-          <label for="aPaterno"><strong>¿Cual es su grado de estudios?</strong></label>
+          <label for="estudiosForm"><strong>¿Cual es su grado de estudios?</strong></label>
           <select name="estudiosForm" id="estudiosForm" class="inputEAT txt-center selectEAT" required>
               <?php
               if($estudios=="")

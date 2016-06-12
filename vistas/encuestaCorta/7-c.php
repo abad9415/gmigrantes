@@ -6,33 +6,18 @@
 <form id="eCorta1" method="post">
    <div class="divPreguntas">
       <div class="divInputs">
-           <label for="cruzandoForm"><strong>Cuando lo detuvieron...</strong></label>
-          <select name="cruzandoForm" id="cruzandoForm" class="inputEAT txt-center selectEAT" required>
-               <?php
-              if($cruzando=="")
-              {
-                  
-              }else{?>
-                  <option value="<?=$cruzando?>"><?=$cruzando?></option>
-             <?php
-                   }
-              ?>
-              <option value="Estaba Cruzando">Estaba Cruzando</option>
-              <option value="Vivia en E.U.A.">Vivia en E.U.A.</option>
-          </select>
+         <select name="ano"> <!-- Los años se cargan con javascript y jquery -->
+        </select>
       </div>
             <div>
             <input type="hidden" name="ape_paternoForm" id="ape_paternoForm" value="<?=$ape_paterno?>">
             <input type="hidden" name="ape_maternoForm" id="ape_maternoForm" value="<?=$ape_materno?>">
-             <input type="hidden" name="nombreForm" id="nombreForm" value="<?=$nombre?>">
+            <input type="hidden" name="nombreForm" id="nombreForm" value="<?=$nombre?>">
             <input type="hidden" name="edadForm" id="edadForm" value="<?=$edad?>">
-            <input type="hidden" name="originarioForm" id="originarioForm" value="<?=$originario?>">
-            <input type="hidden" name="estado_civilForm" id="estado_civilForm" value="<?=$estado_civil?>">
-             <input type="hidden" name="hijosForm" id="hijosForm" value="<?=$hijos?>">
+            
+            <input type="hidden" name="hijosForm" id="hijosForm" value="<?=$hijos?>">
             <input type="hidden" name="estudiosForm" id="estudiosForm" value="<?=$estudios?>">
-            
-            
-           
+            <input type="hidden" name="cruzandoForm" id="cruzandoForm" value="<?=$cruzando?>">
             <input type="hidden" name="c_fecha_salio_casaForm" id="c_fecha_salio_casaForm" value="<?=$c_fecha_salio_casa?>">
             <input type="hidden" name="c_por_donde_cruzoForm" id="c_por_donde_cruzoForm" value="<?=$c_por_donde_cruzo?>">
             <input type="hidden" name="c_cuanto_cobranForm" id="c_cuanto_cobranForm" value="<?=$c_cuanto_cobran?>">
@@ -48,38 +33,25 @@
             <input type="hidden" name="derechos_violados_porqueForm" id="derechos_violados_porqueForm" value="<?=$derechos_violados_porque?>">
             <input type="hidden" name="servicio_moduloForm" id="servicio_moduloForm" value="<?=$servicio_modulo?>">
             <input type="hidden" name="id_migranteForm" id="id_migranteForm" value="<?=$idForm?>">
-            <input type="hidden" name="nextPage" id="nextPage" value="6.php">
+            <input type="hidden" name="nextPage" id="nextPage" value="8-c.php">
         </div>
     </div>
-             <a href="4.php" class="txt-left flechasEAT"><span class="icon-arrow-left2"></span></a>
+             <a href="6-c.php" class="txt-left flechasEAT"><span class="icon-arrow-left2"></span></a>
             <button name="nextForm" id="nextForm" type="submit" class="botonNext flechasEAT txt-right">
             <span class="icon-arrow-right2"></span>
             </button>
 </form>
-<script type="text/javascript">
-    function cambiarNextPage5(){
-        if($("#cruzandoForm").val()=="Estaba Cruzando")
-            {
-               // alert("nextPage 6-C");
-                $("#nextPage").val("6-c.php");
-            }
-        if($("#cruzandoForm").val()=="Vivia en E.U.A.")
-            {
-                //alert("nextPage 6-V");
-                $("#nextPage").val("6-v.php");
-            }
-        //alert($("#cruzandoForm").val());
-    }
-    cambiarNextPage5();
-	$(document).ready(function()
-		{
-		$("#cruzandoForm").change(function () {
-			//alert($(this).val());
-            cambiarNextPage5();
-			});
+
+ <script>
+        $(document).ready(function(){
  
-		 });
-</script>
+            // cargamos los años
+            for(var i=2000;i<2020;i++)
+            {
+                $("select[name=ano]").append(new Option(i,i));
+            }
+        });
+    </script>
 <?php
 include '../../vistas/footer.php';
 ?>
