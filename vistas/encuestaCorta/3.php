@@ -7,9 +7,14 @@
    <div class="divPreguntas">
       <div class="divInputs">
           <label for="originarioForm"><strong>¿Donde Nacio?</strong></label>
-          <input type="text" id="originarioForm" class="txt-center" name="originarioForm" value="<?=$originario?>" required>
+          <input type="text" id="originarioForm" class="txt-center" name="originarioForm" value="<?=$originario?>" required autocomplete="off">
           <label for="estado_civilForm"><strong>¿Estado Civil?</strong></label>
-          <input type="text" id="estado_civilForm" class="txt-center" name="estado_civilForm" required value="<?=$estado_civil?>">
+          <select name="estado_civilForm" id="estado_civilForm" class="inputEAT" required>
+              <option value="<?=$estado_civil?>"><?=$estado_civil?></option>
+              <option value="Soltero">Soltero</option>
+              <option value="Casado">Casado</option>
+              <option value="Union Libre">Union libre</option>
+          </select>
       </div>
             <div>
             <input type="hidden" name="ape_paternoForm" id="ape_paternoForm" value="<?=$ape_paterno?>">

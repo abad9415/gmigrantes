@@ -9,7 +9,7 @@
           <label for="nombreForm"><strong>Nombre</strong></label>
           <input type="text" id="nombreForm" class="txt-center" name="nombreForm" value="<?=$nombre?>" required>
           <label for="edadForm"><strong>Edad</strong></label>
-          <input type="text" id="edadForm" class="txt-center" name="edadForm" required value="<?=$edad?>">
+          <input type="number" max="99" id="edadForm" class="txt-center" name="edadForm" required value="<?=$edad?>">
       </div>
             <div>
             <input type="hidden" name="ape_paternoForm" id="ape_paternoForm" value="<?=$ape_paterno?>">

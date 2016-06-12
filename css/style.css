@@ -9,13 +9,13 @@ body {
   margin: 5% auto;
   text-align: center;
   color: #0074D9; }
-  .divPreguntas label, .divPreguntas input {
+  .divPreguntas label, .divPreguntas input, .divPreguntas .inputEAT {
     text-align: center;
     display: block;
     margin: auto;
     font-size: 45px;
     margin-bottom: 20px; }
-  .divPreguntas input {
+  .divPreguntas input, .divPreguntas .inputEAT {
     border-style: solid;
     border-color: #B2DAC8;
     border-width: 5px;
@@ -24,10 +24,10 @@ body {
     text-transform: capitalize;
     box-shadow: 0px 3px 1px #888888;
     transition: font-size 0.6s ease; }
-    .divPreguntas input:focus {
+    .divPreguntas input:focus, .divPreguntas .inputEAT:focus {
       outline: 0px;
       border-color: #3D9970; }
-    .divPreguntas input:valid {
+    .divPreguntas input:valid, .divPreguntas .inputEAT:valid {
       border-color: #3D9970; }
   .divPreguntas span {
     color: #0074D9;
@@ -58,5 +58,11 @@ body {
 .txt-left {
   float: left;
   margin-left: 50px; }
+
+.selectEAT {
+  text-align: center;
+  text-align-last: center; }
+  .selectEAT option {
+    text-align: left; }
 
 /*# sourceMappingURL=style.css.map */
