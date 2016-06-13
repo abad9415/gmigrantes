@@ -12,7 +12,9 @@ $(document).ready(function(){
 			  '&hijosForm='+$("#hijosForm").val() +
               '&estudiosForm='+$("#estudiosForm").val() +
               '&cruzandoForm='+$("#cruzandoForm").val() +
-              '&c_fecha_salio_casaForm='+$("#c_fecha_salio_casaForm").val() +
+              '&c_fecha_salio_casaAnoForm='+$("#c_fecha_salio_casaAnoForm").val() +
+              '&c_fecha_salio_casaMesForm='+$("#c_fecha_salio_casaMesForm").val() +
+              '&c_fecha_salio_casaDiaForm='+$("#c_fecha_salio_casaDiaForm").val() +
               '&c_por_donde_cruzoForm='+$("#c_por_donde_cruzoForm").val() +
               '&c_cuanto_cobranForm='+$("#c_cuanto_cobranForm").val() +
               '&c_intentosForm='+$("#c_intentosForm").val() +

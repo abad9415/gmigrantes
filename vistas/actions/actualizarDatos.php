@@ -12,9 +12,21 @@
 		// Requerimos la clase de usuarios
 		require '../../lib/preguntas.php';
 		
+
+        //Convertiremos fechas
+        /*$c_fecha_salio_casa = $_POST['c_fecha_salio_casaAnoForm'] . "-" . $_POST['c_fecha_salio_casaMesForm'] . "-" . $_POST['c_fecha_salio_casaDiaForm'];*/
+    //echo $c_fecha_salio_casa;
+        
 		//Instanciamos nuestra clase usuarios
 		$preguntas = new preguntas($datosConexionBD);
 		//Le damos valor a los atributos
+        if ($_POST['c_fecha_salio_casaAnoForm']==""){
+            $preguntas->c_fecha_salio_casa = "";
+        }else{
+             $preguntas->c_fecha_salio_casa = $_POST['c_fecha_salio_casaAnoForm'] . "-" . $_POST['c_fecha_salio_casaMesForm'] . "-" . $_POST['c_fecha_salio_casaDiaForm'];
+        }
+       
+
 		$preguntas->id_migrante = $_POST['id_migranteForm'];
 		$preguntas->ape_paterno = $_POST['ape_paternoForm'];
 		$preguntas->ape_materno = $_POST['ape_maternoForm'];
@@ -25,7 +37,7 @@
         $preguntas->hijos = $_POST['hijosForm'];
         $preguntas->estudios = $_POST['estudiosForm'];
         $preguntas->cruzando = $_POST['cruzandoForm'];
-        $preguntas->c_fecha_salio_casa = $_POST['c_fecha_salio_casaForm'];
+        
         $preguntas->c_por_donde_cruzo = $_POST['c_por_donde_cruzoForm'];
         $preguntas->c_cuanto_cobran = $_POST['c_cuanto_cobranForm'];
         $preguntas->c_intentos = $_POST['c_intentosForm'];

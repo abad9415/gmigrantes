@@ -65,4 +65,33 @@ body {
   .selectEAT option {
     text-align: left; }
 
+.divSalioCasa {
+  position: relative;
+  width: 90%;
+  margin: 5% auto;
+  text-align: center;
+  color: #0074D9;
+  text-align: center;
+  margin: auto;
+  font-size: 45px;
+  margin-bottom: 20px; }
+  .divSalioCasa input, .divSalioCasa select {
+    font-size: 30px;
+    border-style: solid;
+    border-color: #B2DAC8;
+    border-width: 5px;
+    border-radius: 20px;
+    background: #DDDDDD;
+    text-transform: capitalize;
+    box-shadow: 0px 3px 1px #888888;
+    transition: font-size 0.6s ease; }
+    .divSalioCasa input:focus, .divSalioCasa select:focus {
+      outline: 0px;
+      border-color: #3D9970; }
+    .divSalioCasa input:valid, .divSalioCasa select:valid {
+      border-color: #3D9970; }
+
+.color-azul {
+  color: #0074D9; }
+
 /*# sourceMappingURL=style.css.map */

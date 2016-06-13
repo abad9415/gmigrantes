@@ -32,8 +32,24 @@
             <input type="hidden" name="estudiosForm" id="estudiosForm" value="<?=$estudios?>">
             
             
-           
-            <input type="hidden" name="c_fecha_salio_casaForm" id="c_fecha_salio_casaForm" value="<?=$c_fecha_salio_casa?>">
+           <?php
+            if($resultadoFechaArray=="3")
+            {
+                ?>
+                 <input type="hidden" name="c_fecha_salio_casaForm" id="c_fecha_salio_casaAnoForm" value="<?=$FechaArray[0]?>">
+                <input type="hidden" name="c_fecha_salio_casaForm" id="c_fecha_salio_casaMesForm" value="<?=$FechaArray[1]?>">
+                <input type="hidden" name="c_fecha_salio_casaForm" id="c_fecha_salio_casaDiaForm" value="<?=$FechaArray[2]?>">
+                <?php
+            }else{
+                ?>
+                 <input type="hidden" name="c_fecha_salio_casaForm" id="c_fecha_salio_casaAnoForm" value="">
+                <input type="hidden" name="c_fecha_salio_casaForm" id="c_fecha_salio_casaMesForm" value="">
+                <input type="hidden" name="c_fecha_salio_casaForm" id="c_fecha_salio_casaDiaForm" value="">
+                <?php
+            }
+            ?>
+            
+            
             <input type="hidden" name="c_por_donde_cruzoForm" id="c_por_donde_cruzoForm" value="<?=$c_por_donde_cruzo?>">
             <input type="hidden" name="c_cuanto_cobranForm" id="c_cuanto_cobranForm" value="<?=$c_cuanto_cobran?>">
             <input type="hidden" name="c_intentosForm" id="c_intentosForm" value="<?=$c_intentos?>">

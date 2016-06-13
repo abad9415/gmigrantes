@@ -103,5 +103,10 @@ $idForm = $id[$i];
             $servicio_modulo = $row['servicio_modulo'];
 		}
 /*Fin de Nueva consulta de id incrmeentado*/
+$FechaArray = explode("-", $c_fecha_salio_casa);
+$resultadoFechaArray = count($FechaArray);
+
+/*Empezamos a desbaratar la c_fecha_salio_casa */
+/*Fin de  desbaratar la c_fecha_salio_casa */
 echo "Ultimo id: " . $nombre    ;
 ?>
