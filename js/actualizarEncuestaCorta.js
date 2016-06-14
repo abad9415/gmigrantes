@@ -19,7 +19,8 @@ $(document).ready(function(){
               '&c_cuanto_cobranForm='+$("#c_cuanto_cobranForm").val() +
               '&c_intentosForm='+$("#c_intentosForm").val() +
               '&vivia_euaForm='+$("#vivia_euaForm").val() +
-              '&v_anos_viviendoForm='+$("#v_anos_viviendoForm").val() +
+              '&tiempo_detenidoDiasForm='+$("#tiempo_detenidoDiasForm").val() +
+              '&tiempo_detenidoMesForm='+$("#tiempo_detenidoMesForm").val() +
               '&v_donde_viviaForm='+$("#v_donde_viviaForm").val() +
               '&v_donde_lo_detuvieronForm='+$("#v_donde_lo_detuvieronForm").val() +
               '&tiempo_detenidoForm='+$("#tiempo_detenidoForm").val() +

@@ -103,10 +103,22 @@ $idForm = $id[$i];
             $servicio_modulo = $row['servicio_modulo'];
 		}
 /*Fin de Nueva consulta de id incrmeentado*/
+/*Empezamos a desbaratar la c_fecha_salio_casa */
 $FechaArray = explode("-", $c_fecha_salio_casa);
 $resultadoFechaArray = count($FechaArray);
-
-/*Empezamos a desbaratar la c_fecha_salio_casa */
 /*Fin de  desbaratar la c_fecha_salio_casa */
+/*Empezamos a desbaratar la duracion detenido */
+$tiempoDetenidoArray = explode("-", $tiempo_detenido);
+$resultadotiempoDetenido = count($tiempoDetenidoArray);
+if($resultadotiempoDetenido==2){
+    $tiempo_detenidoDias = $tiempoDetenidoArray[0];
+    $tiempo_detenidoMes = $tiempoDetenidoArray[1];
+}else{
+    $tiempo_detenidoDias = "";
+    $tiempo_detenidoMes = "";
+}
+echo $tiempo_detenidoDias . " y " . $tiempo_detenidoMes;
+//echo $c_cuanto_cobran;
+/*Fin de  desbaratar la duracion detenido*/
 echo "Ultimo id: " . $nombre    ;
 ?>

@@ -25,6 +25,14 @@
         }else{
              $preguntas->c_fecha_salio_casa = $_POST['c_fecha_salio_casaAnoForm'] . "-" . $_POST['c_fecha_salio_casaMesForm'] . "-" . $_POST['c_fecha_salio_casaDiaForm'];
         }
+        
+        if ($_POST['tiempo_detenidoDiasForm']=="")
+        {
+             $preguntas->tiempo_detenido = "";
+        }else{
+            $preguntas->tiempo_detenido = $_POST['tiempo_detenidoDiasForm'] . "-" . $_POST['tiempo_detenidoMesForm'];
+        }
+       
        
 
 		$preguntas->id_migrante = $_POST['id_migranteForm'];
@@ -45,7 +53,7 @@
         $preguntas->v_anos_viviendo = $_POST['v_anos_viviendoForm'];
         $preguntas->v_donde_vivia = $_POST['v_donde_viviaForm'];
         $preguntas->v_donde_lo_detuvieron = $_POST['v_donde_lo_detuvieronForm'];
-        $preguntas->tiempo_detenido = $_POST['tiempo_detenidoForm'];
+        
         $preguntas->porque_mas_3_dias = $_POST['porque_mas_3_diasForm'];
         $preguntas->victima_abuso = $_POST['victima_abusoForm'];
         $preguntas->conoce_derechos = $_POST['conoce_derechosForm'];

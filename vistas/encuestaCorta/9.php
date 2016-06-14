@@ -2,14 +2,41 @@
 	include '../../vistas/header.php';
 	include '../actions/actionRequerido.php';
 ?>
+<script>
+$(document).ready(function(){
+    $("#div-oculto").hide();
+            function abusoOtro(){
+                if($("#victima_abusoForm").val()=="Otro")
+                    {
+                        $("#div-oculto").show(1000);
+                    }else{
+                        $("#div-oculto").hide(1000);
+                    }
+            }
+            
+            $("#victima_abusoForm").change(function () {
+			//alert($(this).val());
+            abusoOtro();
+			});
+        });
+</script>
+
 <body onload = "document.eCorta1.aPaterno.focus() ">
 <form id="eCorta1" method="post">
    <div class="divPreguntas">
       <div class="divInputs">
-          <label for="nombreForm"><strong>Nombre</strong></label>
-          <input type="text" id="nombreForm" class="txt-center" name="nombreForm" value="<?=$nombre?>" required>
-          <label for="edadForm"><strong>Edad</strong></label>
-          <input type="number" max="99" id="edadForm" class="txt-center" name="edadForm" required value="<?=$edad?>">
+          <label for="victima_abusoForm"><strong>Ha sido victima de abuso?</strong></label>
+          <select name="victima_abusoForm" id="victima_abusoForm" class="divSalioCasa">
+              <option value="No">No</option>
+              <option value="Robo">Robo</option>
+              <option value="Secuestro">Secuestro</option>
+              <option value="Extorsion">Extorsión</option>
+              <option value="Otro">Otro...</option>
+          </select>
+          <div class="div-oculto" id="div-oculto">
+              <label for="victima_abusoOtroForm" id="labelvictima_abusoOtroForm">¿Qué tipo de abuso?</label>
+              <input type="text" id="victima_abusoOtroForm" name="victima_abusoOtroForm">
+          </div>
       </div>
             <div>
             <input type="hidden" name="ape_paternoForm" id="ape_paternoForm" value="<?=$ape_paterno?>">
@@ -65,18 +92,31 @@
            
            
             <input type="hidden" name="porque_mas_3_diasForm" id="porque_mas_3_diasForm" value="<?=$porque_mas_3_dias?>">
-            <input type="hidden" name="victima_abusoForm" id="victima_abusoForm" value="<?=$victima_abuso?>">
+            
             <input type="hidden" name="conoce_derechosForm" id="conoce_derechosForm" value="<?=$conoce_derechos?>">
             <input type="hidden" name="derechos_violados_porqueForm" id="derechos_violados_porqueForm" value="<?=$derechos_violados_porque?>">
             <input type="hidden" name="servicio_moduloForm" id="servicio_moduloForm" value="<?=$servicio_modulo?>">
             <input type="hidden" name="id_migranteForm" id="id_migranteForm" value="<?=$idForm?>">
-            <input type="hidden" name="nextPage" id="nextPage" value="3.php">
+            <input type="hidden" name="nextPage" id="nextPage" value="10.php">
         </div>
     </div>
-             <a href="1.php" class="txt-left flechasEAT"><span class="icon-arrow-left2"></span></a>
+            <?php
+                if($porque_mas_3_dias=="")
+                {
+                    ?>
+                    <a href="8.php" class="txt-left flechasEAT"><span class="icon-arrow-left2"></span></a>
+                    <?php
+                }else{
+                    ?>
+                    <a href="9-m.php" class="txt-left flechasEAT"><span class="icon-arrow-left2"></span></a>
+                    <?php
+                }
+            ?>
+             
             <button name="nextForm" id="nextForm" type="submit" class="botonNext flechasEAT txt-right">
             <span class="icon-arrow-right2"></span>
             </button>
+            
 </form>
 
 <?php
