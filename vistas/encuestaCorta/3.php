@@ -1,35 +1,44 @@
 <?php
-	#####################################################
-	#AUTOR: Eduardo Abad Tinoco                 (EAT)	#
-	#FECHA: 10 de Junio del 2016						#
-	#DESCRIPCIÓN: INGRESO DE DATOS          			#
-	#                           						#
-	#####################################################
-	#HISTORIAL DE MODIFICACIONES						#
-	#####################################################
 	include '../../vistas/header.php';
 	include '../actions/actionRequerido.php';
-
 ?>
 <body onload = "document.eCorta1.aPaterno.focus() ">
 <form id="eCorta1" method="post">
    <div class="divPreguntas">
       <div class="divInputs">
-          <label for="aPaterno"><strong>Apellido Paterno</strong></label>
-          <input type="text" id="ape_paternoForm" class="txt-center divSalioCasa" name="ape_paternoForm" required value="<?=$ape_paterno?>" autocomplete="off">
-          <label for="aPaterno"><strong>Apellido Materno</strong></label>
-          <input type="text" id="ape_maternoForm" class="txt-center" name="ape_maternoForm" required value="<?=$ape_materno?>" autocomplete="off">
+          <label for="originarioForm"><strong>¿Donde Nacio?</strong></label>
+          <input type="text" id="originarioForm" class="txt-center" name="originarioForm" value="<?=$originario?>" required autocomplete="off">
+          <label for="estado_civilForm"><strong>¿Estado Civil?</strong></label>
+          <select name="estado_civilForm" id="estado_civilForm" class="inputEAT" required>
+             <?php
+                    if($estado_civil=="")
+                    {
+                        ?>
+                             
+                        <?php
+                    }else{
+                        ?>
+                        <option value="<?=$estado_civil?>"><?=$estado_civil?></option>
+                        <?php
+                    }
+                ?>
+              <option value="Soltero">Soltero</option>
+              <option value="Casado">Casado</option>
+              <option value="Separado/Divorciado">Separado/Divorciado</option>
+              <option value="union libre">union libre</option>
+          </select>
       </div>
-        <div>
+            <div>
+            <input type="hidden" name="ape_paternoForm" id="ape_paternoForm" value="<?=$ape_paterno?>">
+            <input type="hidden" name="ape_maternoForm" id="ape_maternoForm" value="<?=$ape_materno?>">
             <input type="hidden" name="nombreForm" id="nombreForm" value="<?=$nombre?>">
             <input type="hidden" name="edadForm" id="edadForm" value="<?=$edad?>">
-            <input type="hidden" name="originarioForm" id="originarioForm" value="<?=$originario?>">
-            <input type="hidden" name="estado_civilForm" id="estado_civilForm" value="<?=$estado_civil?>">
+            
             <input type="hidden" name="hijosForm" id="hijosForm" value="<?=$hijos?>">
             <input type="hidden" name="estudiosForm" id="estudiosForm" value="<?=$estudios?>">
             <input type="hidden" name="cruzandoForm" id="cruzandoForm" value="<?=$cruzando?>">
             
-             <?php
+            <?php
             if($resultadoFechaArray=="3")
             {
                 ?>
@@ -86,13 +95,15 @@
             <input type="hidden" name="derechos_violados_porqueForm" id="derechos_violados_porqueForm" value="<?=$derechos_violados_porque?>">
             <input type="hidden" name="servicio_moduloForm" id="servicio_moduloForm" value="<?=$servicio_modulo?>">
             <input type="hidden" name="id_migranteForm" id="id_migranteForm" value="<?=$idForm?>">
-            <input type="hidden" name="nextPage" id="nextPage" value="2.php">
+            <input type="hidden" name="nextPage" id="nextPage" value="4.php">
         </div>
     </div>
-    <button name="nextForm" id="nextForm" type="submit" class="botonNext flechasEAT txt-right">
-    <span class="icon-arrow-right2"></span>
-    </button>
+             <a href="2.php" class="txt-left flechasEAT"><span class="icon-arrow-left2"></span></a>
+            <button name="nextForm" id="nextForm" type="submit" class="botonNext flechasEAT txt-right">
+            <span class="icon-arrow-right2"></span>
+            </button>
 </form>
+
 <?php
 include '../../vistas/footer.php';
 ?>

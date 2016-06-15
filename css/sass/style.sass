@@ -3,6 +3,7 @@ $green: #3D9970
 $green-: #B2DAC8
 $lime: #01FF70
 $blue: #0074D9
+$red: #FF4136
 body
     text-align: center
     a
@@ -13,13 +14,13 @@ body
     margin: 5% auto
     text-align: center
     color: $blue
-    label, input
+    label, input , .inputEAT
         text-align: center
         display: block
         margin: auto
         font-size: 45px
         margin-bottom: 20px
-    input
+    input, .inputEAT
         border-style: solid
         border-color: $green-
         border-width: 5px
@@ -42,10 +43,57 @@ body
             font-size: 70px
             text-shadow: 0px 7px 5px #888888
 
+.flechasEAT
+    background: transparent
+    border: none
+    color: $blue
+    font-size: 60px
+    transition: font-size 0.2s ease
+    text-shadow: 0px 5px 3px #888888
+    cursor: pointer
+    outline: 0px
+    &:hover
+        font-size: 70px
+        text-shadow: 0px 7px 5px #888888
 .txt-right
     float: right
     margin-right: 50px
 .txt-left
     float: left
     margin-left: 50px
+.selectEAT
+    text-align: center
+    text-align-last: center
+    option
+        text-align: left
+.divSalioCasa
+    position: relative
+    width: 90%
+    margin: 5% auto
+    text-align: center
+    color: $blue
+    text-align: center
+    margin: auto
+    font-size: 45px
+    margin-bottom: 20px
+    input, select
+        font-size: 30px
+        border-style: solid
+        border-color: $green-
+        border-width: 5px
+        border-radius: 20px
+        background: $gray
+        text-transform: capitalize
+        box-shadow: 0px 3px 1px #888888
+        transition: font-size 0.6s ease
+        &:focus
+            outline: 0px
+            border-color: $green
+        &:valid
+            border-color: $green
+.color-azul
+    color: $blue
+.color-rojo
+    color: $red
+
     

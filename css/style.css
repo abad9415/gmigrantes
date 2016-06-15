@@ -9,13 +9,13 @@ body {
   margin: 5% auto;
   text-align: center;
   color: #0074D9; }
-  .divPreguntas label, .divPreguntas input {
+  .divPreguntas label, .divPreguntas input, .divPreguntas .inputEAT {
     text-align: center;
     display: block;
     margin: auto;
     font-size: 45px;
     margin-bottom: 20px; }
-  .divPreguntas input {
+  .divPreguntas input, .divPreguntas .inputEAT {
     border-style: solid;
     border-color: #B2DAC8;
     border-width: 5px;
@@ -24,10 +24,10 @@ body {
     text-transform: capitalize;
     box-shadow: 0px 3px 1px #888888;
     transition: font-size 0.6s ease; }
-    .divPreguntas input:focus {
+    .divPreguntas input:focus, .divPreguntas .inputEAT:focus {
       outline: 0px;
       border-color: #3D9970; }
-    .divPreguntas input:valid {
+    .divPreguntas input:valid, .divPreguntas .inputEAT:valid {
       border-color: #3D9970; }
   .divPreguntas span {
     color: #0074D9;
@@ -38,6 +38,19 @@ body {
       font-size: 70px;
       text-shadow: 0px 7px 5px #888888; }
 
+.flechasEAT {
+  background: transparent;
+  border: none;
+  color: #0074D9;
+  font-size: 60px;
+  transition: font-size 0.2s ease;
+  text-shadow: 0px 5px 3px #888888;
+  cursor: pointer;
+  outline: 0px; }
+  .flechasEAT:hover {
+    font-size: 70px;
+    text-shadow: 0px 7px 5px #888888; }
+
 .txt-right {
   float: right;
   margin-right: 50px; }
@@ -45,5 +58,43 @@ body {
 .txt-left {
   float: left;
   margin-left: 50px; }
+
+.selectEAT {
+  text-align: center;
+  text-align-last: center; }
+  .selectEAT option {
+    text-align: left; }
+
+.divSalioCasa {
+  position: relative;
+  width: 90%;
+  margin: 5% auto;
+  text-align: center;
+  color: #0074D9;
+  text-align: center;
+  margin: auto;
+  font-size: 45px;
+  margin-bottom: 20px; }
+  .divSalioCasa input, .divSalioCasa select {
+    font-size: 30px;
+    border-style: solid;
+    border-color: #B2DAC8;
+    border-width: 5px;
+    border-radius: 20px;
+    background: #DDDDDD;
+    text-transform: capitalize;
+    box-shadow: 0px 3px 1px #888888;
+    transition: font-size 0.6s ease; }
+    .divSalioCasa input:focus, .divSalioCasa select:focus {
+      outline: 0px;
+      border-color: #3D9970; }
+    .divSalioCasa input:valid, .divSalioCasa select:valid {
+      border-color: #3D9970; }
+
+.color-azul {
+  color: #0074D9; }
+
+.color-rojo {
+  color: #FF4136; }
 
 /*# sourceMappingURL=style.css.map */

@@ -3,17 +3,59 @@
 	include '../actions/actionRequerido.php';
 ?>
 <body onload = "document.eCorta1.aPaterno.focus() ">
+<h2 class="color-azul"><strong>Sus Derechos...</strong></h2>
 <form id="eCorta1" method="post">
    <div class="divPreguntas">
       <div class="divInputs">
-          <label for="nombreForm"><strong>Nombre</strong></label>
-          <input type="text" id="nombreForm" class="txt-center" name="nombreForm" value="<?=$nombre?>" required autocomplete="off">
-          <label for="edadForm"><strong>Edad</strong></label>
-          <input type="number" max="99" id="edadForm" class="txt-center" name="edadForm" required value="<?=$edad?>" autocomplete="off">
+         <div class="div-oculto0">
+              <label for="conoce_derechosForm"><strong>¿Conoce sus derechos?</strong></label>
+          <select name="conoce_derechosForm" id="conoce_derechosForm" class="divSalioCasa">
+             <?php
+              if($conoce_derechos=="")
+              {
+              }else{
+                  ?>
+                  <option value="<?=$conoce_derechos?>"><?=$conoce_derechos?></option>
+                  <?php
+              }
+              
+              ?>
+              <option value="No">No</option>
+              <option value="Si">Si</option>
+          </select>
+         </div>
+         <div class="div-oculto">
+              <label for="derechosVioladosForm"><strong>¿Siente que han sido violados?</strong></label>
+           <select name="derechosVioladosForm" id="derechosVioladosForm" class="divSalioCasa">
+             <?php
+              if($conoce_derechos=="")
+              {
+              }else{
+                  ?>
+                  <option value="<?=$conoce_derechos?>"><?=$conoce_derechos?></option>
+                  <?php
+              }
+              
+              ?>
+              <option value="No">No</option>
+              <option value="Si">Si</option>
+          </select>
+          </div>
+          
+          <div class="div-oculto2" id="div-oculto">
+              <label for="derechos_violados_porqueForm">¿Porqué?</label>
+              <input type="text" id="derechos_violados_porqueForm" name="derechos_violados_porqueForm" value="<?=$derechos_violados_porque?>" autocomplete="off">
+          </div>
+          
+          
+           <input type="hidden" name="conoce_derechosForm" id="conoce_derechosForm" value="<?=$conoce_derechos?>">
+            <input type="hidden" name="derechos_violados_porqueForm" id="derechos_violados_porqueForm" value="<?=$derechos_violados_porque?>">
       </div>
             <div>
             <input type="hidden" name="ape_paternoForm" id="ape_paternoForm" value="<?=$ape_paterno?>">
             <input type="hidden" name="ape_maternoForm" id="ape_maternoForm" value="<?=$ape_materno?>">
+            <input type="hidden" name="nombreForm" id="nombreForm" value="<?=$nombre?>">
+            <input type="hidden" name="edadForm" id="edadForm" value="<?=$edad?>">
             <input type="hidden" name="originarioForm" id="originarioForm" value="<?=$originario?>">
             <input type="hidden" name="estado_civilForm" id="estado_civilForm" value="<?=$estado_civil?>">
             <input type="hidden" name="hijosForm" id="hijosForm" value="<?=$hijos?>">
@@ -65,7 +107,7 @@
            
            
             <input type="hidden" name="porque_mas_3_diasForm" id="porque_mas_3_diasForm" value="<?=$porque_mas_3_dias?>">
-             <?php
+               <?php
                 if($resultadoAbusoOtroArray=="2")
                 {
                     ?>
@@ -79,18 +121,62 @@
                     <?php
                 }
             ?>
-            <input type="hidden" name="conoce_derechosForm" id="conoce_derechosForm" value="<?=$conoce_derechos?>">
-            <input type="hidden" name="derechos_violados_porqueForm" id="derechos_violados_porqueForm" value="<?=$derechos_violados_porque?>">
+           
+           
             <input type="hidden" name="servicio_moduloForm" id="servicio_moduloForm" value="<?=$servicio_modulo?>">
             <input type="hidden" name="id_migranteForm" id="id_migranteForm" value="<?=$idForm?>">
-            <input type="hidden" name="nextPage" id="nextPage" value="3.php">
+            <input type="hidden" name="nextPage" id="nextPage" value="11.php">
         </div>
     </div>
-             <a href="1.php" class="txt-left flechasEAT"><span class="icon-arrow-left2"></span></a>
+            <a href="9.php" class="txt-left flechasEAT"><span class="icon-arrow-left2"></span></a>
             <button name="nextForm" id="nextForm" type="submit" class="botonNext flechasEAT txt-right">
             <span class="icon-arrow-right2"></span>
             </button>
+            
 </form>
+
+<script>
+$(document).ready(function(){
+    var valorPhpPorquederechosViolados = $("#derechos_violados_porqueForm").val();
+    $(".div-oculto").hide();
+    $(".div-oculto2").hide();
+    //alert(valorPhpPorquederechosViolados);
+            function conoceSusDerechos(){
+                if($("#conoce_derechosForm").val()=="Si")
+                    {
+                        $(".div-oculto").show(1000);
+                    }else{
+                        $(".div-oculto").hide(1000);
+                    }
+                }
+            function derechosViolados(){
+                if($("#derechosVioladosForm").val()=="Si")
+                    {
+                        $(".div-oculto2").show(1000);
+                        $("#derechos_violados_porqueForm").prop('required',true);
+                        $(".div-oculto0").hide(1000);
+                        $("#derechos_violados_porqueForm").val(valorPhpPorquederechosViolados);
+                    }else{
+                        $(".div-oculto2").hide(1000);
+                        $("#derechos_violados_porqueForm").prop('required',false);
+                        $(".div-oculto0").show(1000);
+                        $("#derechos_violados_porqueForm").val("No");
+                    }
+            }
+            conoceSusDerechos();
+            derechosViolados();
+            $("#conoce_derechosForm").change(function () {
+			//alert($(this).val());
+            conoceSusDerechos();
+			});
+    
+            $("#derechosVioladosForm").change(function () {
+			//alert($(this).val());
+            derechosViolados();
+			});
+        });
+</script>
+
 
 <?php
 include '../../vistas/footer.php';

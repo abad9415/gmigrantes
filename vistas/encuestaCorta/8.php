@@ -1,26 +1,57 @@
 <?php
-	#####################################################
-	#AUTOR: Eduardo Abad Tinoco                 (EAT)	#
-	#FECHA: 10 de Junio del 2016						#
-	#DESCRIPCIÓN: INGRESO DE DATOS          			#
-	#                           						#
-	#####################################################
-	#HISTORIAL DE MODIFICACIONES						#
-	#####################################################
 	include '../../vistas/header.php';
 	include '../actions/actionRequerido.php';
-
 ?>
 <body onload = "document.eCorta1.aPaterno.focus() ">
 <form id="eCorta1" method="post">
-   <div class="divPreguntas">
+  <h1 class="color-azul">Tiempo Detenido</h1>
+   <div class="divSalioCasa">
       <div class="divInputs">
-          <label for="aPaterno"><strong>Apellido Paterno</strong></label>
-          <input type="text" id="ape_paternoForm" class="txt-center divSalioCasa" name="ape_paternoForm" required value="<?=$ape_paterno?>" autocomplete="off">
-          <label for="aPaterno"><strong>Apellido Materno</strong></label>
-          <input type="text" id="ape_maternoForm" class="txt-center" name="ape_maternoForm" required value="<?=$ape_materno?>" autocomplete="off">
+          
+           <label for="tiempo_detenidoDiasForm"><strong>Días</strong></label>
+         <select name="tiempo_detenidoDiasForm" id="tiempo_detenidoDiasForm">
+            <?php
+             if($tiempo_detenidoDias=="")
+             {
+                 
+             }else{
+              ?>
+              <option value="<?=$tiempo_detenidoDias?>"><?=$tiempo_detenidoDias?></option>
+             <?php
+             }
+             ?>
+        </select>
+         
+        <label for="tiempo_detenidoMesForm"><strong>Meses</strong></label>
+        <select name="tiempo_detenidoMesForm" id="tiempo_detenidoMesForm">
+           <?php
+             if($tiempo_detenidoMes=="")
+             {
+                 
+             }else{
+                 ?>
+                 <option value="<?=$tiempo_detenidoMes?>"><?=$tiempo_detenidoMes?></option>
+                  <?php
+             }
+             ?>
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+        </select>
       </div>
-        <div>
+            <div>
+            <input type="hidden" name="ape_paternoForm" id="ape_paternoForm" value="<?=$ape_paterno?>">
+            <input type="hidden" name="ape_maternoForm" id="ape_maternoForm" value="<?=$ape_materno?>">
             <input type="hidden" name="nombreForm" id="nombreForm" value="<?=$nombre?>">
             <input type="hidden" name="edadForm" id="edadForm" value="<?=$edad?>">
             <input type="hidden" name="originarioForm" id="originarioForm" value="<?=$originario?>">
@@ -29,7 +60,7 @@
             <input type="hidden" name="estudiosForm" id="estudiosForm" value="<?=$estudios?>">
             <input type="hidden" name="cruzandoForm" id="cruzandoForm" value="<?=$cruzando?>">
             
-             <?php
+            <?php
             if($resultadoFechaArray=="3")
             {
                 ?>
@@ -53,22 +84,10 @@
             <input type="hidden" name="v_anos_viviendoForm" id="v_anos_viviendoForm" value="<?=$v_anos_viviendo?>">
             <input type="hidden" name="v_donde_viviaForm" id="v_donde_viviaForm" value="<?=$v_donde_vivia?>">
             <input type="hidden" name="v_donde_lo_detuvieronForm" id="v_donde_lo_detuvieronForm" value="<?=$v_donde_lo_detuvieron?>">
-             <?php
-            if($resultadotiempoDetenido==2)
-            {
-                ?>
-                 <input type="hidden" name="tiempo_detenidoDiasForm" id="tiempo_detenidoDiasForm" value="<?=$tiempo_detenidoDias?>">
-                  <input type="hidden" name="tiempo_detenidoMesForm" id="tiempo_detenidoMesForm" value="<?=$tiempo_detenidoMes?>">
-               <?php
-            }else{
-                ?>
-                  <input type="hidden" name="tiempo_detenidoDiasForm" id="tiempo_detenidoDiasForm" value="">
-                  <input type="hidden" name="tiempo_detenidoMesForm" id="tiempo_detenidoMesForm" value="">
-                <?php
-            }
-            ?>
+            
             <input type="hidden" name="porque_mas_3_diasForm" id="porque_mas_3_diasForm" value="<?=$porque_mas_3_dias?>">
-             <?php
+            
+            <?php
                 if($resultadoAbusoOtroArray=="2")
                 {
                     ?>
@@ -82,17 +101,77 @@
                     <?php
                 }
             ?>
+            
             <input type="hidden" name="conoce_derechosForm" id="conoce_derechosForm" value="<?=$conoce_derechos?>">
             <input type="hidden" name="derechos_violados_porqueForm" id="derechos_violados_porqueForm" value="<?=$derechos_violados_porque?>">
             <input type="hidden" name="servicio_moduloForm" id="servicio_moduloForm" value="<?=$servicio_modulo?>">
             <input type="hidden" name="id_migranteForm" id="id_migranteForm" value="<?=$idForm?>">
-            <input type="hidden" name="nextPage" id="nextPage" value="2.php">
+            <input type="hidden" name="nextPage" id="nextPage" value="9.php">
         </div>
     </div>
-    <button name="nextForm" id="nextForm" type="submit" class="botonNext flechasEAT txt-right">
-    <span class="icon-arrow-right2"></span>
-    </button>
+            <?php
+            if($v_donde_lo_detuvieron=="")
+            {
+                ?>
+                <a href="7-c.php" class="txt-left flechasEAT"><span class="icon-arrow-left2"></span></a>
+                <?php
+            }
+            else{
+                ?>
+                <a href="7-v.php" class="txt-left flechasEAT"><span class="icon-arrow-left2"></span></a>
+                <?php
+            }
+            ?>
+             
+            <button name="nextForm" id="nextForm" type="submit" class="botonNext flechasEAT txt-right">
+            <span class="icon-arrow-right2"></span>
+            </button>
+            
+             <script>
+        $(document).ready(function(){
+ 
+            // cargamos los dias
+            for(var i=01;i<32;i++)
+            {
+                $("#tiempo_detenidoDiasForm").append(new Option(i,i));
+            }
+      
+                 
+                 
+            function cambiarNextPage8(){
+            if($("#tiempo_detenidoDiasForm").val()>3)
+                {
+                   // alert("nextPage 6-C");
+                    $("#nextPage").val("9-m.php");
+                }else{
+                    if($("#tiempo_detenidoMesForm").val()>=1){
+                        $("#nextPage").val("9-m.php");
+                    }else{
+                        $("#nextPage").val("9.php");
+                        $("#porque_mas_3_diasForm").val("");
+                    }
+                    
+                }
+            //alert($("#cruzandoForm").val());
+        }
+        cambiarNextPage8();
+        
+            $("#tiempo_detenidoDiasForm").change(function () {
+                //alert($(this).val());
+                cambiarNextPage8();
+                //alert($("#nextPage").val());
+                });
+            $("#tiempo_detenidoMesForm").change(function () {
+                //alert($(this).val());
+                cambiarNextPage8();
+                //alert($("#nextPage").val());
+                });
+
+            
+          });
+    </script>
 </form>
+
 <?php
 include '../../vistas/footer.php';
 ?>
