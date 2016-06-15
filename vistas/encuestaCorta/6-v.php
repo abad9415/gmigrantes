@@ -10,7 +10,7 @@
           <input type="number" id="v_anos_viviendoForm" class="txt-center" name="v_anos_viviendoForm" value="<?=$v_anos_viviendo?>" required min="0" max="99">
           
           <label for="v_donde_viviaForm"><strong>¿Dónde vivia?</strong></label>
-          <input type="text" id="v_donde_viviaForm" class="txt-center" name="v_donde_viviaForm" value="<?=$v_donde_vivia?>" required>
+          <input type="text" id="v_donde_viviaForm" class="txt-center" name="v_donde_viviaForm" value="<?=$v_donde_vivia?>" required autocomplete="off">
         
             <input type="hidden" name="v_donde_lo_detuvieronForm" id="v_donde_lo_detuvieronForm" value="<?=$v_donde_lo_detuvieron?>">
       </div>
@@ -34,10 +34,36 @@
             <input type="hidden" name="c_intentosForm" id="c_intentosForm" value="">
             <input type="hidden" name="vivia_euaForm" id="vivia_euaForm" value="<?=$vivia_eua?>">
             
-            
+             <?php
+            if($resultadotiempoDetenido==2)
+            {
+                ?>
+                 <input type="hidden" name="tiempo_detenidoDiasForm" id="tiempo_detenidoDiasForm" value="<?=$tiempo_detenidoDias?>">
+                  <input type="hidden" name="tiempo_detenidoMesForm" id="tiempo_detenidoMesForm" value="<?=$tiempo_detenidoMes?>">
+               <?php
+            }else{
+                ?>
+                  <input type="hidden" name="tiempo_detenidoDiasForm" id="tiempo_detenidoDiasForm" value="">
+                  <input type="hidden" name="tiempo_detenidoMesForm" id="tiempo_detenidoMesForm" value="">
+                <?php
+            }
+            ?>
             <input type="hidden" name="tiempo_detenidoForm" id="tiempo_detenidoForm" value="<?=$tiempo_detenido?>">
             <input type="hidden" name="porque_mas_3_diasForm" id="porque_mas_3_diasForm" value="<?=$porque_mas_3_dias?>">
-            <input type="hidden" name="victima_abusoForm" id="victima_abusoForm" value="<?=$victima_abuso?>">
+             <?php
+                if($resultadoAbusoOtroArray=="2")
+                {
+                    ?>
+                    <input type="hidden" name="victima_abusoForm" id="victima_abusoForm" value="<?=$tipoAbuso?>">
+                    <input type="hidden" name="victima_abusoOtroForm" id="victima_abusoOtroForm" value="<?=$tipoAbusoOtro?>">
+                    <?php
+                }else{
+                    ?>
+                    <input type="hidden" name="victima_abusoForm" id="victima_abusoForm" value="<?=$tipoAbuso?>">
+                    <input type="hidden" name="victima_abusoOtroForm" id="victima_abusoOtroForm" value="">
+                    <?php
+                }
+            ?>
             <input type="hidden" name="conoce_derechosForm" id="conoce_derechosForm" value="<?=$conoce_derechos?>">
             <input type="hidden" name="derechos_violados_porqueForm" id="derechos_violados_porqueForm" value="<?=$derechos_violados_porque?>">
             <input type="hidden" name="servicio_moduloForm" id="servicio_moduloForm" value="<?=$servicio_modulo?>">

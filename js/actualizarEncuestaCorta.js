@@ -21,17 +21,19 @@ $(document).ready(function(){
               '&vivia_euaForm='+$("#vivia_euaForm").val() +
               '&tiempo_detenidoDiasForm='+$("#tiempo_detenidoDiasForm").val() +
               '&tiempo_detenidoMesForm='+$("#tiempo_detenidoMesForm").val() +
+              '&v_anos_viviendoForm='+$("#v_anos_viviendoForm").val() +
               '&v_donde_viviaForm='+$("#v_donde_viviaForm").val() +
               '&v_donde_lo_detuvieronForm='+$("#v_donde_lo_detuvieronForm").val() +
               '&tiempo_detenidoForm='+$("#tiempo_detenidoForm").val() +
               '&porque_mas_3_diasForm='+$("#porque_mas_3_diasForm").val() +
               '&victima_abusoForm='+$("#victima_abusoForm").val() +
+              '&victima_abusoOtroForm='+$("#victima_abusoOtroForm").val() +
               '&conoce_derechosForm='+$("#conoce_derechosForm").val() +
               '&derechos_violados_porqueForm='+$("#derechos_violados_porqueForm").val() +
               '&servicio_moduloForm='+$("#servicio_moduloForm").val()+
               '&id_migranteForm='+$("#id_migranteForm").val()
 			}).done(function(result) {
-				//alert (result);
+				//alert ($("#v_anos_viviendoForm").val());
                 //alert ($("#nextPage").val());
 				window.location.href = $("#nextPage").val();		
 		});

@@ -7,9 +7,9 @@
    <div class="divPreguntas">
       <div class="divInputs">
           <label for="nombreForm"><strong>Nombre</strong></label>
-          <input type="text" id="nombreForm" class="txt-center" name="nombreForm" value="<?=$nombre?>" required>
+          <input type="text" id="nombreForm" class="txt-center" name="nombreForm" value="<?=$nombre?>" required autocomplete="off">
           <label for="edadForm"><strong>Edad</strong></label>
-          <input type="number" max="99" id="edadForm" class="txt-center" name="edadForm" required value="<?=$edad?>">
+          <input type="number" max="99" id="edadForm" class="txt-center" name="edadForm" required value="<?=$edad?>" autocomplete="off">
       </div>
             <div>
             <input type="hidden" name="ape_paternoForm" id="ape_paternoForm" value="<?=$ape_paterno?>">
@@ -65,7 +65,20 @@
            
            
             <input type="hidden" name="porque_mas_3_diasForm" id="porque_mas_3_diasForm" value="<?=$porque_mas_3_dias?>">
-            <input type="hidden" name="victima_abusoForm" id="victima_abusoForm" value="<?=$victima_abuso?>">
+             <?php
+                if($resultadoAbusoOtroArray=="2")
+                {
+                    ?>
+                    <input type="hidden" name="victima_abusoForm" id="victima_abusoForm" value="<?=$tipoAbuso?>">
+                    <input type="hidden" name="victima_abusoOtroForm" id="victima_abusoOtroForm" value="<?=$tipoAbusoOtro?>">
+                    <?php
+                }else{
+                    ?>
+                    <input type="hidden" name="victima_abusoForm" id="victima_abusoForm" value="<?=$tipoAbuso?>">
+                    <input type="hidden" name="victima_abusoOtroForm" id="victima_abusoOtroForm" value="">
+                    <?php
+                }
+            ?>
             <input type="hidden" name="conoce_derechosForm" id="conoce_derechosForm" value="<?=$conoce_derechos?>">
             <input type="hidden" name="derechos_violados_porqueForm" id="derechos_violados_porqueForm" value="<?=$derechos_violados_porque?>">
             <input type="hidden" name="servicio_moduloForm" id="servicio_moduloForm" value="<?=$servicio_modulo?>">

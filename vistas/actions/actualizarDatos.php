@@ -33,6 +33,18 @@
             $preguntas->tiempo_detenido = $_POST['tiempo_detenidoDiasForm'] . "-" . $_POST['tiempo_detenidoMesForm'];
         }
        
+        if ($_POST['victima_abusoForm']=="")
+        {
+             $preguntas->victima_abuso = "";
+        }else{
+            if($_POST['victima_abusoForm']=="Otro")
+            {
+                $preguntas->victima_abuso = $_POST['victima_abusoForm'] . ":" . $_POST['victima_abusoOtroForm'];
+            }else{
+                $preguntas->victima_abuso = $_POST['victima_abusoForm'];
+            }
+            
+        }
        
 
 		$preguntas->id_migrante = $_POST['id_migranteForm'];
@@ -55,7 +67,7 @@
         $preguntas->v_donde_lo_detuvieron = $_POST['v_donde_lo_detuvieronForm'];
         
         $preguntas->porque_mas_3_dias = $_POST['porque_mas_3_diasForm'];
-        $preguntas->victima_abuso = $_POST['victima_abusoForm'];
+        
         $preguntas->conoce_derechos = $_POST['conoce_derechosForm'];
         $preguntas->derechos_violados_porque = $_POST['derechos_violados_porqueForm'];
         $preguntas->servicio_modulo = $_POST['servicio_moduloForm'];

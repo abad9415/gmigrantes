@@ -10,10 +10,22 @@
           <input type="text" id="originarioForm" class="txt-center" name="originarioForm" value="<?=$originario?>" required autocomplete="off">
           <label for="estado_civilForm"><strong>¿Estado Civil?</strong></label>
           <select name="estado_civilForm" id="estado_civilForm" class="inputEAT" required>
-              <option value="<?=$estado_civil?>"><?=$estado_civil?></option>
+             <?php
+                    if($estado_civil=="")
+                    {
+                        ?>
+                             
+                        <?php
+                    }else{
+                        ?>
+                        <option value="<?=$estado_civil?>"><?=$estado_civil?></option>
+                        <?php
+                    }
+                ?>
               <option value="Soltero">Soltero</option>
               <option value="Casado">Casado</option>
-              <option value="Union Libre">Union libre</option>
+              <option value="Separado/Divorciado">Separado/Divorciado</option>
+              <option value="union libre">union libre</option>
           </select>
       </div>
             <div>
@@ -65,7 +77,20 @@
             }
             ?>
             <input type="hidden" name="porque_mas_3_diasForm" id="porque_mas_3_diasForm" value="<?=$porque_mas_3_dias?>">
-            <input type="hidden" name="victima_abusoForm" id="victima_abusoForm" value="<?=$victima_abuso?>">
+             <?php
+                if($resultadoAbusoOtroArray=="2")
+                {
+                    ?>
+                    <input type="hidden" name="victima_abusoForm" id="victima_abusoForm" value="<?=$tipoAbuso?>">
+                    <input type="hidden" name="victima_abusoOtroForm" id="victima_abusoOtroForm" value="<?=$tipoAbusoOtro?>">
+                    <?php
+                }else{
+                    ?>
+                    <input type="hidden" name="victima_abusoForm" id="victima_abusoForm" value="<?=$tipoAbuso?>">
+                    <input type="hidden" name="victima_abusoOtroForm" id="victima_abusoOtroForm" value="">
+                    <?php
+                }
+            ?>
             <input type="hidden" name="conoce_derechosForm" id="conoce_derechosForm" value="<?=$conoce_derechos?>">
             <input type="hidden" name="derechos_violados_porqueForm" id="derechos_violados_porqueForm" value="<?=$derechos_violados_porque?>">
             <input type="hidden" name="servicio_moduloForm" id="servicio_moduloForm" value="<?=$servicio_modulo?>">

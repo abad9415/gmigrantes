@@ -120,5 +120,17 @@ if($resultadotiempoDetenido==2){
 echo $tiempo_detenidoDias . " y " . $tiempo_detenidoMes;
 //echo $c_cuanto_cobran;
 /*Fin de  desbaratar la duracion detenido*/
+/*INICIO Otro tipo de abuso*/
+$abusoOtroArray = explode(":", $victima_abuso);
+$resultadoAbusoOtroArray = count($abusoOtroArray);
+if($resultadoAbusoOtroArray==2)
+{
+    $tipoAbuso = $abusoOtroArray [0]; // esta variabnle es para el select
+    $tipoAbusoOtro = $abusoOtroArray [1]; //este es la casilla parta comentar el tipo de abuso elejido en otro...
+}else{
+    $tipoAbuso = $victima_abuso;
+    $tipoAbusoOtro = "";
+}
+/*FIN Otro tipo de abuso*/
 echo "Ultimo id: " . $nombre    ;
 ?>
