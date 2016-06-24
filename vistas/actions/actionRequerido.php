@@ -15,6 +15,8 @@
     $ape_paterno = null;
     $ape_materno = null;
     $nombre = null;
+    $sexo = null;
+    $fecha_de_nacimiento = null;
     $edad = null;
     $originario = null;
     $estado_civil = null;
@@ -34,6 +36,7 @@
     $victima_abuso = null;
     $conoce_derechos = null;
     $derechos_violados_porque = null;
+    $como_de_salud = null;
     $servicio_modulo = null;
     
     $idR = $preguntas->consultaId();
@@ -81,6 +84,8 @@ $idForm = $id[$i];
 			$ape_paterno = $row['ape_paterno'];
 			$ape_materno = $row['ape_materno'];
             $nombre = $row['nombre'];
+            $sexo = $row['sexo'];
+            $fecha_de_nacimiento = $row['fecha_de_nacimiento'];
             $edad = $row['edad'];
             $originario = $row['originario'];
             $estado_civil = $row['estado_civil'];
@@ -100,9 +105,31 @@ $idForm = $id[$i];
             $victima_abuso = $row['victima_abuso'];
             $conoce_derechos = $row['conoce_derechos'];
             $derechos_violados_porque = $row['derechos_violados_porque'];
+            $como_de_salud = $row['como_de_salud'];
             $servicio_modulo = $row['servicio_modulo'];
 		}
 /*Fin de Nueva consulta de id incrmeentado*/
+$FechaNacimientoArray = explode("-", $fecha_de_nacimiento);
+$resultadoFechaNacimientoArray = count($FechaNacimientoArray);
+if($resultadoFechaNacimientoArray==3)
+{
+   $dia = $FechaNacimientoArray[2];  
+ $mes = $FechaNacimientoArray[1]; 
+ $anio = $FechaNacimientoArray[0]; 
+$diac =date("d"); 
+       $mesc =date("m"); 
+       $anioc =date("Y"); 
+$edad =  $anioc-$anio;
+ if($mesc < $mes && $diac < $dia || $mesc < $mes || $diac < $dia){ 
+
+    $edad_aux = $edad - 1; 
+
+     $edad = $edad_aux; 
+     }
+}
+
+ 
+
 /*Empezamos a desbaratar la c_fecha_salio_casa */
 $FechaArray = explode("-", $c_fecha_salio_casa);
 $resultadoFechaArray = count($FechaArray);
@@ -117,9 +144,31 @@ if($resultadotiempoDetenido==2){
     $tiempo_detenidoDias = "";
     $tiempo_detenidoMes = "";
 }
-echo $tiempo_detenidoDias . " y " . $tiempo_detenidoMes;
 //echo $c_cuanto_cobran;
 /*Fin de  desbaratar la duracion detenido*/
+$originarioArray = explode("-", $originario);
+$resultadoOriginario = count($originarioArray);
+if($resultadoOriginario==3){
+    $originarioPais = $originarioArray[0];
+    $originarioEstado = $originarioArray[1];
+    $originarioMunicipio = $originarioArray[2];
+}else{
+    $originarioPais = "";
+    $originarioEstado = "";
+    $originarioMunicipio = "";
+}
+
+//Inicio cuanto cobran divison para monedas junto con precio
+$cCuantoCobranArray = explode("-", $c_cuanto_cobran);
+$resultadoCuantoCobran = count($cCuantoCobranArray);
+if($resultadoCuantoCobran=="2"){
+    $cantidadCuantoCobran = $cCuantoCobranArray[0];
+    $monedaCuantoCobran = $cCuantoCobranArray[1];
+}else{
+    $cantidadCuantoCobran = "";
+    $monedaCuantoCobran = "";
+}
+//Fin cuanto cobran divison para monedas junto con precio
 /*INICIO Otro tipo de abuso*/
 $abusoOtroArray = explode(":", $victima_abuso);
 $resultadoAbusoOtroArray = count($abusoOtroArray);
@@ -132,5 +181,4 @@ if($resultadoAbusoOtroArray==2)
     $tipoAbusoOtro = "";
 }
 /*FIN Otro tipo de abuso*/
-echo "Ultimo id: " . $nombre    ;
 ?>

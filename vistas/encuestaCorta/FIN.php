@@ -1,14 +1,20 @@
 <?php
 	include '../../vistas/header.php';
 ?>
-<h1>Muchas gracias, Dios Te Bendice!!!</h1>
+
 
 <script>
     $(document).ready(function(){
+        swal({
+          title: 'Muchas Gracias!!!',
+          type: 'success',
+          showCancelButton: false,
+          showConfirmButton: false
+        })
             function recargarPagina(){
                 window.location.href = "1.php";
             }
-            setInterval(recargarPagina, 2500);
+            setInterval(recargarPagina, 2000);
          });
     
 </script>

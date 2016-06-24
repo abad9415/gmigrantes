@@ -1,0 +1,57 @@
+$font-family: "Roboto", Arial
+$font-stencil: 'Stardos Stencil', cursive
+
+$color-desierto: #efdfb0
+$color-moztasa: #d5ab2c
+$color-moztasa-light: #F4DC94
+body
+    background: url(../img/indexgmigrantes.jpg)
+    background-repeat: no-repeat, repeat
+    background-size: cover
+    /*background-size: auto*/
+    font-size: 16px
+    a
+        text-decoration: none
+    h1
+        font-size: 5em
+        font-family: $font-stencil
+    h2
+        font-size: 2.5em
+        font-family: $font-stencil
+        color: $color-desierto
+    aside
+        display: inline-block
+        float: left
+        img
+            width: 150px
+    header
+        display: block
+        text-align: center
+    section
+        text-align: center
+        margin-top: 20%
+        h1
+            display: inline
+            padding: 0
+            margin: 0
+            color: $color-moztasa
+.labelEncuesta
+    &:hover
+        color: $color-moztasa-light
+footer
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 100%
+    a,h2
+        display: inline
+    h2
+        font-size: 1.2em
+        
+@media (max-width: 1024px)
+    body
+        background: url(../img/indexgmigrantesGrande.jpg)
+        background-size: cover
+        background-repeat: no-repeat
+        
+        

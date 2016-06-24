@@ -9,7 +9,7 @@ $(document).ready(function(){
               '&fecha_de_nacimientoDiaForm='+$("#fecha_de_nacimientoDiaForm").val() +
               '&fecha_de_nacimientoMesForm='+$("#fecha_de_nacimientoMesForm").val() +
               '&fecha_de_nacimientoAnoForm='+$("#fecha_de_nacimientoAnoForm").val() +
-              '&sexoForm='+$("#sexoForm").val() +
+              '&sexoForm='+$(".sexoForm:checked").val() +
 			  '&edadForm='+$("#edadForm").val() +
 			  '&originarioPaisForm='+$("#originarioPaisForm").val() +
               '&originarioEstadoForm='+$("#originarioEstadoForm").val() +
@@ -41,7 +41,7 @@ $(document).ready(function(){
               '&servicio_moduloForm='+$("#servicio_moduloForm").val()+
               '&id_migranteForm='+$("#id_migranteForm").val()
 			}).done(function(result) {
-				//alert ($("#ape_maternoForm").val());
+				//alert ($("#v_anos_viviendoForm").val());
                 //alert ($("#nextPage").val());
 				window.location.href = $("#nextPage").val();		
 		});

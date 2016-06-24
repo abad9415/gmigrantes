@@ -23,7 +23,7 @@ $(document).ready(function(){
               '&c_fecha_salio_casaDiaForm='+$("#c_fecha_salio_casaDiaForm").val() +
               '&c_por_donde_cruzoForm='+$("#c_por_donde_cruzoForm").val() +
               '&c_cuanto_cobranCantidadForm='+$("#c_cuanto_cobranCantidadForm").val() +
-              '&c_cuanto_cobranMonedaForm='+$("#c_cuanto_cobranMonedaForm").val() +
+              '&c_cuanto_cobranMonedaForm='+$(".c_cuanto_cobranMonedaForm:checked").val() +
               '&c_intentosForm='+$("#c_intentosForm").val() +
               '&vivia_euaForm='+$("#vivia_euaForm").val() +
               '&tiempo_detenidoDiasForm='+$("#tiempo_detenidoDiasForm").val() +
@@ -41,7 +41,7 @@ $(document).ready(function(){
               '&servicio_moduloForm='+$("#servicio_moduloForm").val()+
               '&id_migranteForm='+$("#id_migranteForm").val()
 			}).done(function(result) {
-				//alert ($("#ape_maternoForm").val());
+				//alert ($("#sexoForm").val());
                 //alert ($("#nextPage").val());
 				window.location.href = $("#nextPage").val();		
 		});

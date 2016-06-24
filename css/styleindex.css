@@ -1,0 +1,52 @@
+body {
+  background: url(../img/indexgmigrantes.jpg);
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  /*background-size: auto */
+  font-size: 16px; }
+  body a {
+    text-decoration: none; }
+  body h1 {
+    font-size: 5em;
+    font-family: "Stardos Stencil", cursive; }
+  body h2 {
+    font-size: 2.5em;
+    font-family: "Stardos Stencil", cursive;
+    color: #efdfb0; }
+  body aside {
+    display: inline-block;
+    float: left; }
+    body aside img {
+      width: 150px; }
+  body header {
+    display: block;
+    text-align: center; }
+  body section {
+    text-align: center;
+    margin-top: 20%; }
+    body section h1 {
+      display: inline;
+      padding: 0;
+      margin: 0;
+      color: #d5ab2c; }
+
+.labelEncuesta:hover {
+  color: #F4DC94; }
+
+footer {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%; }
+  footer a, footer h2 {
+    display: inline; }
+  footer h2 {
+    font-size: 1.2em; }
+
+@media (max-width: 1024px) {
+  body {
+    background: url(../img/indexgmigrantesGrande.jpg);
+    background-size: cover;
+    background-repeat: no-repeat; } }
+
+/*# sourceMappingURL=styleindex.css.map */
